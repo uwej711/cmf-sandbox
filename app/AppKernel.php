@@ -16,7 +16,7 @@ class AppKernel extends Kernel
 
             // register your bundles
             new Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
-
+            new Bundle\CMF\SearchBundle\CMFSearchBundle(),
         );
 
         if ($this->isDebug()) {

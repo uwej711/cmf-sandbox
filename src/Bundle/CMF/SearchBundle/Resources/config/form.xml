@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="cmf_search.form.search.class">Bundle\CMF\SearchBundle\Form\SearchForm</parameter>
+        <parameter key="cmf_search.form.search.name">cmf_search</parameter>
+    </parameters>
+
+    <services>
+        <service id="cmf_search.form.search" class="%cmf_search.form.search.class%">
+            <argument>%cmf_search.form.search.name%</argument>
+            <argument type="collection">
+                <argument key="validator" type="service" id="validator" />
+            </argument>
+        </service>
+    </services>
+
+</container>

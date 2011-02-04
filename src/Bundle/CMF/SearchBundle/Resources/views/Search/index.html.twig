@@ -1,0 +1,23 @@
+{% for key, flash in app.session.getFlashes() %}
+<div class="{{ key }}">
+    {% trans flash from 'cmf_search' %}
+</div>
+{% endfor %}
+<form action="{{ path('cmf_search_result') }}" {{ form_enctype(form) }} method="POST" class="cmf_search_quick">
+    <ul>
+        <li>
+            {{ form_label(form.keywords, 'label.keywords') }}
+            {{ form_errors(form.keywords) }}
+            {{ form_field(form.keywords) }}
+        </li>
+    </ul>
+    <div>
+        <button type="submit" class="btn btn-add" ><span>{% trans 'legiscape_file.file.save' from 'legiscape_file' %}</span></button>
+    </div>
+</form>
+
+{% for result in results %}
+    {% for value in result %}
+        {{ value }}
+    {% endfor %}
+{% endfor %}
