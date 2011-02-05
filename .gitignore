@@ -1,2 +1,5 @@
 app/cache/*
 app/logs/*
+jackrabbit-standalone-2.2.2.jar
+jackrabbit/
+nbproject/

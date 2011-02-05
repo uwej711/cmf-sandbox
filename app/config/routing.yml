@@ -2,3 +2,37 @@ homepage:
     pattern:  /
     defaults: { _controller: FrameworkBundle:Default:index }
 
+playground:
+    resource: @PlaygroundBundle/Resources/config/routing.yml
+
+base_application:
+    resource: '@SonataBaseApplicationBundle/Resources/config/routing/base_application.xml'
+    prefix: /admin
+
+admin:
+    resource: '@SonataBaseApplicationBundle/Resources/config/routing/base_application.admin'
+    prefix: /admin
+
+sonata_news_view:
+    pattern: /blog/{year}/{month}/{day}/{slug}
+    defaults: { _controller: SonataNewsBundle:Post:view }
+
+sonata_news_add_comment:
+    pattern: /blog/add-comment/{id}
+    defaults: { _controller: SonataNewsBundle:Post:addComment }
+
+sonata_news_archive_daily:
+    pattern: /blog/{year}/{month}/{day}
+    defaults: { _controller: SonataNewsBundle:Post:archiveDaily }
+
+sonata_news_archive_monthly:
+    pattern: /blog/{year}/{month}
+    defaults: { _controller: SonataNewsBundle:Post:archiveMonthly }
+
+sonata_news_archive_yearly:
+    pattern: /blog/{year}
+    defaults: { _controller: SonataNewsBundle:Post:archiveYearly }
+
+sonata_news_archive:
+    pattern: /blog
+    defaults: { _controller: SonataNewsBundle:Post:archive }
