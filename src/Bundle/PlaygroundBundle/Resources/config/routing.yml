@@ -1,0 +1,23 @@
+hello:
+    pattern:  /hello/{name}
+    defaults: { _controller: PlaygroundBundle:Default:index }
+
+set:
+    pattern:  /set/{username}
+    defaults: { _controller: PlaygroundBundle:Default:setDocument }
+
+get:
+    pattern:  /get/{username}
+    defaults: { _controller: PlaygroundBundle:Default:getDocument }
+
+setchild:
+    pattern:  /setchild/{parent}/{username}
+    defaults: { _controller: PlaygroundBundle:Default:setDocumentChild }
+
+getchildren:
+    pattern:  /getchildren/{parent}
+    defaults: { _controller: PlaygroundBundle:Default:getDocumentChildren }
+
+create:
+    pattern:  /create/{name}
+    defaults: { _controller: PlaygroundBundle:Default:createWorkspace }
