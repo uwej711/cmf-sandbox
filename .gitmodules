@@ -16,15 +16,12 @@
 [submodule "src/Bundle/DoctrinePHPCRBundle"]
 	path = src/Bundle/DoctrinePHPCRBundle
 	url = git://github.com/docteurklein/DoctrinePHPCRBundle.git
-[submodule "src/Bundle/BaseApplicationBundle"]
-	path = src/Bundle/BaseApplicationBundle
-	url = git://github.com/sonata-project/BaseApplicationBundle.git
 [submodule "src/Sonata/jQueryBundle"]
 	path = src/Sonata/jQueryBundle
 	url = git@github.com:sonata-project/jQueryBundle.git
 [submodule "src/Sonata/BaseApplicationBundle"]
 	path = src/Sonata/BaseApplicationBundle
-	url = git@github.com:sonata-project/BaseApplicationBundle.git
+	url = git@github.com:ideatosrl/BaseApplicationBundle.git
 [submodule "src/Sonata/BluePrintBundle"]
 	path = src/Sonata/BluePrintBundle
 	url = git@github.com:sonata-project/BluePrintBundle.git
