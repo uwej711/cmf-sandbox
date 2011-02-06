@@ -25,8 +25,10 @@ class DefaultController extends Controller
           return $this->render('MagazineBundle:Default:fill_form.html.twig', array('form' => $form));
         }
 
+        $path = $this->get('request')->request->get($form->getName(), '/');
+
         $dm = $this->container->get('doctrine.phpcr_odm.document_manager');
-        $dm->persist($article, '/'.$article->title);
+        $dm->persist($article, rtrim($path['path'], '/').'/'.$article->title);
         $dm->flush();
 
         return $this->render('MagazineBundle:Default:index.html.twig', array('article' => $article));
@@ -34,9 +36,6 @@ class DefaultController extends Controller
 
     public function listDocumentAction()
     {
-//        $dm = $this->container->get('doctrine.phpcr_odm.document_manager');
-//        $dm->emptyRepository();
-       
         $root_node = $this->container->get('doctrine.phpcr_odm.document_manager')->getPhpcrSession()->getRootNode();
 
         //$sql = 'SELECT * FROM [nt:unstructured]';

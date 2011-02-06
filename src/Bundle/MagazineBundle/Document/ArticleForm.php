@@ -14,5 +14,6 @@ class ArticleForm extends \Symfony\Component\Form\Form
         
         $this->add(new TextField('title'));
         $this->add(new TextareaField('body'));
+        $this->add(new TextField('path'));
     }
 }
