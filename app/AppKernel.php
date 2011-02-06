@@ -15,6 +15,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\ZendBundle\ZendBundle(),
 
             // register your bundles
+            new Bundle\MagazineBundle\MagazineBundle(),
             new Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
 
         );

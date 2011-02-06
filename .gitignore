@@ -1,3 +1,7 @@
 app/config/config.yml
 app/cache/*
 app/logs/*
+jackrabbit-standalone.jar
+jackrabbit/
+nbproject/
+
