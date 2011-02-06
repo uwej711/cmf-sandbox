@@ -1,0 +1,19 @@
+list:
+    pattern: /
+    defaults: { _controller: MagazineBundle:Default:listDocument }
+
+set:
+    pattern: /set
+    defaults: { _controller: MagazineBundle:Default:setDocument }
+
+new:
+    pattern: /new
+    defaults: { _controller: MagazineBundle:Default:newDocument }
+
+get:
+    pattern: /get/{title}
+    defaults: { _controller: MagazineBundle:Default:getDocument }
+
+remove:
+    pattern: /remove/{title}
+    defaults: { _controller: MagazineBundle:Default:removeDocument }
