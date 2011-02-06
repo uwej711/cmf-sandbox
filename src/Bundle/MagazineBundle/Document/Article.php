@@ -11,10 +11,17 @@ class Article
     /** @phpcr:Node */
     public $node;
 
-    /** @phpcr:String(name="title") */
+    /**
+     * @phpcr:String(name="title")
+     * @validation:MinLength(3)
+     * @validation:MaxLength(30)
+     */
     public $title;
 
-    /** @phpcr:String(name="body") */
+    /**
+     * @phpcr:String(name="body")
+     * @validation:NotBlank
+     */
     public $body;
 
     public $children;

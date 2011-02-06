@@ -4,7 +4,7 @@ namespace Bundle\MagazineBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class MagazineControllerTest extends WebTestCase
+class ArticleCrudTest extends WebTestCase
 {
     private $client;
     private $dm_already_cleaned = false;
@@ -32,6 +32,20 @@ class MagazineControllerTest extends WebTestCase
 
             $this->dm_already_cleaned = true;
         }
+    }
+
+    public function testNewValidation()
+    {
+        $crawler = $this->client->request('GET', '/new');
+        $form = $crawler->filter('form')->selectButton('Save')->form();
+
+        $form['article[title]'] = '1';
+        $form['article[body]'] = 'Contenuto dell\'articolo';
+        $form['article[path]'] = $this->test_node;
+
+        $crawler = $this->client->submit($form);
+
+        $this->assertTrue($crawler->filter('li:contains("This value is too short. It should have 3 characters or more")')->count() > 0);
     }
 
     public function testNew()
