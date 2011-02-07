@@ -5,6 +5,7 @@ list:
 set:
     pattern: /set
     defaults: { _controller: MagazineBundle:Default:setDocument }
+#    defaults: { _controller: magazine.controller.default::setDocumentAction }
 
 new:
     pattern: /new
@@ -13,7 +14,23 @@ new:
 get:
     pattern: /get/{title}
     defaults: { _controller: MagazineBundle:Default:getDocument }
+    requirements: { title: .* }
 
 remove:
     pattern: /remove/{title}
     defaults: { _controller: MagazineBundle:Default:removeDocument }
+    requirements: { title: .* }
+
+browse_root:
+    pattern: /browse
+    defaults: { _controller: MagazineBundle:Default:browse }
+
+browse:
+    pattern: /browse/{folder}
+    defaults: { _controller: MagazineBundle:Default:browse }
+    requirements: { folder: .* }
+
+new_folder:
+    pattern: /folder/new/{name}
+    defaults: { _controller: MagazineBundle:Default:newFolder }
+    requirements: { name: .* }

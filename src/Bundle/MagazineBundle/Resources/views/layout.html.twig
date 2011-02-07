@@ -1,7 +1,27 @@
 <html>
-<head><title>CMF-sandbox</title></head>
+<head>
+  <title>CMF-sandbox</title>
+  <link href="/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/colors.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/layout.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
 <body>
-{% block content %}
-{% endblock %}
+<div class="container">
+  <div class="header">
+    CMF-Sandbox
+    <div class="sonata-actions">
+      <ul>
+        <li><a href="{{ path('browse_root') }}">Browse root</a></li>
+        <li><a href="{{ path('list') }}">List articles</a></li>
+        <li><a href="{{ path('new') }}">New article</a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+</div>
 </body>
 </html>

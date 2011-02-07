@@ -1,0 +1,11 @@
+{% extends "MagazineBundle::layout.html.twig" %}
+
+{% block content %}
+<h1>Browse</h1>
+<ul>
+  {% for folder in folders %}
+    <li><a href="{{ path('browse', {'folder': folder.getPathWithoutRoot()}) }}">{{ folder.path }} ({{ folder.name }})</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

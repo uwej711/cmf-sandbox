@@ -16,18 +16,18 @@ class ArticleCrudTest extends WebTestCase
 
         if (!$this->dm_already_cleaned) {
             $dm = $this->kernel->getContainer()->get('doctrine.phpcr_odm.document_manager');
-            $article = $dm->find('Bundle\MagazineBundle\Document\Article', $this->test_node);
+            $folder = $dm->find('Bundle\MagazineBundle\Document\Folder', $this->test_node);
 
             try {
-              $dm->remove($article);
+              $dm->remove($folder);
               $dm->flush();
             }
             catch (\Exception $e) {
               // no test node present
             }
             
-            $article = new \Bundle\MagazineBundle\Document\Article();
-            $dm->persist($article, $this->test_node);
+            $folder = new \Bundle\MagazineBundle\Document\Folder();
+            $dm->persist($folder, $this->test_node);
             $dm->flush();
 
             $this->dm_already_cleaned = true;

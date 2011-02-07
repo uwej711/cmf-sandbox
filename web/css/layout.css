@@ -1,0 +1,43 @@
+body, input, textarea {
+    font-family: 'Trebuchet MS',Arial,Helvetica,sans-serif;
+}
+
+.clear {
+  clear: both;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+}
+
+label {
+    display:block;
+    padding-bottom:5px;
+    margin-top:20px;
+}
+
+input {
+  color: #000000;
+  padding: 2px;
+  border: 1px solid #606060;
+  width: 300px;
+}
+
+textarea {
+  color: #000000;
+  padding: 2px;
+  border: 1px solid #606060;
+  width: 300px;
+}
+
+form ul {
+  padding: 0;
+  margin: 0;
+}
+
+form ul li {
+  list-style-type: none;
+  border: 1px solid #FAA;
+  color: #FAA;
+  padding: 0.2em;
+  margin-left: 0;
+}

@@ -24,24 +24,8 @@ class Article
      */
     public $body;
 
-    public $children;
-
-    public function getChildren($repository)
+    public function getPathWithoutRoot()
     {
-        if ($this->children)
-        {
-            return $this->children;
-        }
-
-        $children = $this->node->getNodes();
-
-        foreach($children as $node)
-        {
-            $uow = $repository->getDocumentManager()->getUnitOfWork();
-            $hints = array();
-            $this->children[] = $uow->createDocument($repository->getDocumentName(), $node, $hints);
-        }
-
-        return $this->children;
+      return ltrim($this->path, '/');
     }
 }
