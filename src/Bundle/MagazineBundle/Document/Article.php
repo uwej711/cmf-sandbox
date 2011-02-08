@@ -28,4 +28,9 @@ class Article
     {
       return ltrim($this->path, '/');
     }
+
+    public function __toString()
+    {
+      return $this->title;
+    }
 }

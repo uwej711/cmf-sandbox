@@ -1,10 +1,9 @@
 <?php
 namespace Bundle\MagazineBundle\Document;
 
-use Doctrine\ODM\PHPCR\DocumentRepository;
 use Doctrine\ODM\PHPCR\Mapping\ClassMetadata;
 
-class ArticleRepository extends DocumentRepository
+class ArticleRepository extends \Doctrine\ODM\PHPCR\DocumentRepository
 {
     private $class_name = 'Bundle\MagazineBundle\Document\Article';
 

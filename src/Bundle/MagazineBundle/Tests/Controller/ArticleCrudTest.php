@@ -66,10 +66,25 @@ class ArticleCrudTest extends WebTestCase
     /**
      * @depends testNew
      */
-    public function testGet()
+    public function testShow()
     {
-        $crawler = $this->client->request('GET', '/get/Pippo');
+        $crawler = $this->client->request('GET', '/show'.$this->test_node.'/Pippo');
 
-        $this->assertTrue($crawler->filter('html:contains("Pippo")')->count() > 0);
+        $this->assertTrue($crawler->filter('h1:contains("Pippo")')->count() > 0);
+    }
+
+    public function testNewFolder()
+    {
+        $crawler = $this->client->request('GET', '/folder/new');
+        $form = $crawler->filter('form')->selectButton('Save')->form();
+
+        $form['folder[name]'] = 'FolderNew';
+        $form['folder[path]'] = $this->test_node;
+
+        $crawler = $this->client->submit($form);
+
+        $this->assertTrue($crawler->filter('h1:contains("FolderNew")')->count() > 0);
+        $this->assertTrue($crawler->filter('p:contains("'.$this->test_node.'")')->count() > 0);
+
     }
 }

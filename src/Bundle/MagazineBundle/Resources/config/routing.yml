@@ -11,26 +11,21 @@ new:
     pattern: /new
     defaults: { _controller: MagazineBundle:Default:newDocument }
 
-get:
-    pattern: /get/{title}
-    defaults: { _controller: MagazineBundle:Default:getDocument }
-    requirements: { title: .* }
+show:
+    pattern: /show/{path}
+    defaults: { _controller: MagazineBundle:Default:showDocument }
+    requirements: { path: .* }
 
 remove:
     pattern: /remove/{title}
     defaults: { _controller: MagazineBundle:Default:removeDocument }
     requirements: { title: .* }
 
-browse_root:
-    pattern: /browse
-    defaults: { _controller: MagazineBundle:Default:browse }
-
-browse:
-    pattern: /browse/{folder}
-    defaults: { _controller: MagazineBundle:Default:browse }
-    requirements: { folder: .* }
+set_folder:
+    pattern: /folder/set
+    defaults: { _controller: MagazineBundle:Default:setFolder }
+#    defaults: { _controller: magazine.controller.default::setDocumentAction }
 
 new_folder:
-    pattern: /folder/new/{name}
+    pattern: /folder/new
     defaults: { _controller: MagazineBundle:Default:newFolder }
-    requirements: { name: .* }

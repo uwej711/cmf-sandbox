@@ -43,4 +43,10 @@ class Folder
     {
       return $node->hasProperty('_doctrine_alias') && $node->getPropertyValue('_doctrine_alias') === 'folder';
     }
+
+    public function __toString()
+    {
+      return $this->name ?: 'n/a';
+    }
+
 }
