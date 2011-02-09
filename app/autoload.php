@@ -11,6 +11,9 @@ $loader->registerNamespaces(array(
     'Zend'                           => __DIR__.'/../vendor/zend/library',
     'Jackalope'                      => __DIR__.'/../vendor/doctrine-phpcr/lib/vendor/jackalope/src',
     'PHPCR'                          => __DIR__.'/../vendor/doctrine-phpcr/lib/vendor/jackalope/lib/phpcr/src',
+    'Doctrine\\ODM\\PHPCR'           => __DIR__.'/../vendor/doctrine-phpcr/lib',
+    'Sonata'                         => __DIR__.'/../src',
+    'Application'                    => __DIR__.'/../src',
 ));
 $loader->registerPrefixes(array(
     'Twig_'            => __DIR__.'/../vendor/twig/lib',

@@ -13,10 +13,17 @@ class AppKernel extends Kernel
 
             // enable third-party bundles
             new Symfony\Bundle\ZendBundle\ZendBundle(),
-
+            new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
+            
             // register your bundles
             new Bundle\MagazineBundle\MagazineBundle(),
             new Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
+            new Bundle\PlaygroundBundle\PlaygroundBundle(),
+
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\BluePrintBundle\SonataBluePrintBundle(),
+            new Sonata\BaseApplicationBundle\SonataBaseApplicationBundle(),
+            new Application\CmsBundle\CmsBundle(),
 
         );
 

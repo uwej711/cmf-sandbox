@@ -17,11 +17,21 @@ twig.config:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
 
+doctrine.dbal:
+    driver:   pdo_mysql
+    dbname:   symfony2
+    user:     root
+    password:
+
+doctrine.orm: ~
+        
 phpcr.config:
     backend:
         url: http://localhost:8080/server/
-        workspace: foo
+        workspace: default
         user:
         pass:
         transport:
 
+base_application.config:
+    entities:  ~
