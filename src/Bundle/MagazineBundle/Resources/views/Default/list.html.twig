@@ -1,7 +1,7 @@
 {% extends "MagazineBundle::layout.html.twig" %}
 
 {% block content %}
-<h1>List articles</h1>
+<h1>List documents</h1>
 <table>
   <thead>
     <tr>
@@ -11,13 +11,13 @@
     </tr>
   </thead>
   <tbody>
-  {% for article in articles %}
+  {% for document in documents %}
     <tr>
-      <td>{{ article.path }}</td>
-      <td>{{ article }}</td>
+      <td>{{ document.path }}</td>
+      <td>{{ document }}</td>
       <td>
-        <a href="{{ path('show', {'path': article.getPathWithoutRoot()}) }}">Show</a>
-        <a href="{{ path('remove', {'title': article.getPathWithoutRoot()}) }}">Delete</a>
+        <a href="{{ path('show', {'path': document.getPathWithoutRoot()})|replace({'%2F': '/'}) }}">Show</a>
+        <a href="{{ path('remove', {'title': document.getPathWithoutRoot()})|replace({'%2F': '/'}) }}">Delete</a>
       </td>
     </tr>
   {% endfor %}

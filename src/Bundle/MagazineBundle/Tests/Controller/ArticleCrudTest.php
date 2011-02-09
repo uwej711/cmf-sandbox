@@ -48,7 +48,7 @@ class ArticleCrudTest extends WebTestCase
         $this->assertTrue($crawler->filter('li:contains("This value is too short. It should have 3 characters or more")')->count() > 0);
     }
 
-    public function testNew()
+    private function storeArticle()
     {
         $crawler = $this->client->request('GET', '/new');
         $form = $crawler->filter('form')->selectButton('Save')->form();
@@ -57,19 +57,21 @@ class ArticleCrudTest extends WebTestCase
         $form['article[body]'] = 'Contenuto dell\'articolo';
         $form['article[path]'] = $this->test_node;
 
-        $crawler = $this->client->submit($form);
-
-        $this->assertTrue($crawler->filter('h1:contains("Pippo")')->count() > 0);
-        $this->assertTrue($crawler->filter('p:contains("Contenuto dell\'articolo")')->count() > 0);
+        return $this->client->submit($form);
     }
 
-    /**
-     * @depends testNew
-     */
+    public function testNew()
+    {
+        $crawler = $this->storeArticle();
+        $this->assertTrue($crawler->filter('h1:contains("Pippo")')->count() > 0);
+        $this->assertTrue($crawler->filter('p:contains("Contenuto dell\'articolo")')->count() > 0);
+        $this->assertTrue($crawler->filter('p:contains("/test/Pippo")')->count() > 0);
+    }
+
     public function testShow()
     {
+        $this->storeArticle();
         $crawler = $this->client->request('GET', '/show'.$this->test_node.'/Pippo');
-
         $this->assertTrue($crawler->filter('h1:contains("Pippo")')->count() > 0);
     }
 

@@ -52,7 +52,7 @@ class DocumentRepository
     public function find($path)
     {
         try {
-            return $this->createDocument($this->dm->getPhpcrSession()->getNode($path))  ;
+            return $this->createDocument($this->dm->getPhpcrSession()->getNode($path));
         } catch (\PHPCR\PathNotFoundException $e) {
             return null;
         }

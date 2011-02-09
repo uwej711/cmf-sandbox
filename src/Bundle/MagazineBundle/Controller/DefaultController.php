@@ -70,9 +70,6 @@ class DefaultController extends Controller
      */
     public function setFolderAction()
     {
-
-        return $this->render('MagazineBundle:Default:show_'.$this->getTemplateName($folder).'.html.twig', array('document' => $folder));
-
         $folder = new Folder();
         $form = FolderForm::create($this->get('form.context'), 'folder');
 
@@ -114,6 +111,7 @@ class DefaultController extends Controller
 
         $repository = new DocumentRepository($dm);
         $document = $repository->find('/'.$path);
+//        var_dump($document); die();
 
         return $this->render('MagazineBundle:Default:show_'.$this->getTemplateName($document).'.html.twig', array('document' => $document));
     }
@@ -147,7 +145,7 @@ class DefaultController extends Controller
         $dm = $this->container->get('doctrine.phpcr_odm.document_manager');
         $repository = new DocumentRepository($dm);
 
-        return $this->render('MagazineBundle:Default:list.html.twig', array('articles' => $repository->findAll()));
+        return $this->render('MagazineBundle:Default:list.html.twig', array('documents' => $repository->findAll()));
     }
 
     /**
