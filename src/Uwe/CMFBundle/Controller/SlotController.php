@@ -9,6 +9,13 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SlotController extends Controller
 {
+    /**
+     * show action
+     *
+     * @param string $slot 
+     * @return Response
+     * @author Cludius, Sven
+     */
     public function showAction($slot)
     {
         return $this->render($slot->getTemplate(), array('slot' => $slot));
