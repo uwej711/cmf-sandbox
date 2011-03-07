@@ -13,12 +13,11 @@ class AppKernel extends Kernel
 
             // enable third-party bundles
             new Symfony\Bundle\ZendBundle\ZendBundle(),
-            new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
 
             // register your bundles
             new Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
             new Bundle\Symfony\CMFCoreBundle\CMFCoreBundle(),
-            new Uwe\PageBundle\PageBundle(),
+            new Uwe\CMFBundle\CMFBundle(),
 
         );
 

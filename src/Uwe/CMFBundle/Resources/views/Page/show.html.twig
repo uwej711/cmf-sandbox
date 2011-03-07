@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="{{ page.description }}" />
+        <meta name="keywords" content="{{ page.keywords }}" />
+        <title>{{ page.title }}</title>
+    </head>
+    <body>
+        <h1>{{ page.title }} </h1>
+        <p>{{ page.description }}</p>
+
+        <div id="top">
+          {% render "CMFBundle:Area:show" with {'path': page.path, 'name' : 'top' } %}
+        </div>
+        
+        <div id="content">
+          {% render "CMFBundle:Area:show" with {'path': page.path, 'name' : 'content' } %}
+        </div>
+        
+        <div id="sidebar">
+          {% render "CMFBundle:Area:show" with {'path': page.path, 'name' : 'sidebar' } %}
+        </div>
+        
+    </body>
+</html>
+

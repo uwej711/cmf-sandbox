@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="simpleslot.factory" class="Uwe\CMFBundle\Services\SimpleSlotFactory">
+            <argument type="service" id="form.context" />
+        </service>
+    
+        <service id="teaserslot.factory" class="Uwe\CMFBundle\Services\TeaserSlotFactory">
+            <argument type="service" id="form.context" />
+        </service>
+
+        <service id="simpleslot.controller" class="Uwe\CMFBundle\Controller\CreateSlotController">
+            <argument type="service" id="templating" />
+            <argument type="service" id="doctrine.phpcr_odm.document_manager" />
+            <argument type="service" id="simpleslot.factory" />
+            <argument type="service" id="request" strict="false"/>
+            <argument type="service" id="router" />
+        </service>
+
+        <service id="teaserslot.controller" class="Uwe\CMFBundle\Controller\CreateSlotController">
+            <argument type="service" id="templating" />
+            <argument type="service" id="doctrine.phpcr_odm.document_manager" />
+            <argument type="service" id="teaserslot.factory" />
+            <argument type="service" id="request" strict="false"/>
+            <argument type="service" id="router" />
+        </service>
+    </services>
+
+</container>

@@ -1,0 +1,19 @@
+createpage:
+    pattern:  /cms/page
+    defaults: { _controller: CMFBundle:Page:create }
+
+createsimpleslot:
+    pattern:  /cms/simpleslot
+    defaults: { _controller: _simpleslot.controller:create }
+
+createteaserslot:
+    pattern:  /cms/teaserslot
+    defaults: { _controller: _teaserslot.controller:create }
+
+showpage:
+    pattern:  /{path}
+    defaults: { _controller: CMFBundle:Page:show }
+    requirements:
+      path: .*
+
+

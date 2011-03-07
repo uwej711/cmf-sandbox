@@ -1,10 +1,10 @@
 <?php
 
-namespace Uwe\PageBundle;
+namespace Uwe\CMFBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PageBundle extends Bundle
+class CMFBundle extends Bundle
 {
     public function getNamespace()
     {
